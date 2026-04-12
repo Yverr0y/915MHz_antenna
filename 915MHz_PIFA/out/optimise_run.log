@@ -1,0 +1,672 @@
+============================================================
+STEP 0: Patch-width scan (bandwidth selection)
+============================================================
+
+-- pW = 18.0 mm --
+  pL=26.0mm ...
+  Solver: SuperLU (default)
+    → res=1190 MHz, worst ISM=-0.07 dB
+  pL=28.0mm ...
+  Solver: SuperLU (default)
+    → res=1140 MHz, worst ISM=-0.09 dB
+  pL=30.0mm ...
+  Solver: SuperLU (default)
+    → res=1080 MHz, worst ISM=-0.11 dB
+  pL=32.0mm ...
+  Solver: SuperLU (default)
+    → res=1040 MHz, worst ISM=-0.16 dB
+  pL=34.0mm ...
+  Solver: SuperLU (default)
+0:00:30.524168  ERROR  : GMSH Mesh error detected.
+
+--------------------------
+Known problems/solutions:
+(1) - PLC Error:  A segment and a facet intersect at point
+    This can be caused when approximating thin curved volumes. Try to decrease the mesh size for that region.
+--------------------------
+
+    eval_fresh FAIL: No elements in volume 16 
+    → failed, discarded
+  pL=36.0mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-5.60 dB
+  pL=38.0mm ...
+  Solver: SuperLU (default)
+    → res=870 MHz, worst ISM=-0.42 dB
+  pL=40.0mm ...
+  Solver: SuperLU (default)
+    → res=830 MHz, worst ISM=-0.13 dB
+  pL=42.0mm ...
+  Solver: SuperLU (default)
+    → res=800 MHz, worst ISM=-0.07 dB
+  → probing est pL=36.00mm
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-5.60 dB, S11@915=-10.11 dB
+
+-- pW = 22.0 mm --
+  pL=26.0mm ...
+  Solver: SuperLU (default)
+    → res=1140 MHz, worst ISM=-0.07 dB
+  pL=28.0mm ...
+  Solver: SuperLU (default)
+    → res=1080 MHz, worst ISM=-0.12 dB
+  pL=30.0mm ...
+  Solver: SuperLU (default)
+    → res=1030 MHz, worst ISM=-0.17 dB
+  pL=32.0mm ...
+  Solver: SuperLU (default)
+    → res=1020 MHz, worst ISM=-0.20 dB
+  pL=34.0mm ...
+  Solver: SuperLU (default)
+    → res=960 MHz, worst ISM=-0.87 dB
+  pL=36.0mm ...
+  Solver: SuperLU (default)
+    → res=880 MHz, worst ISM=-0.65 dB
+  pL=38.0mm ...
+  Solver: SuperLU (default)
+    → res=860 MHz, worst ISM=-0.29 dB
+  pL=40.0mm ...
+  Solver: SuperLU (default)
+    → res=800 MHz, worst ISM=-0.08 dB
+  pL=42.0mm ...
+  Solver: SuperLU (default)
+    → res=770 MHz, worst ISM=-0.06 dB
+  → probing est pL=34.96mm
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-4.57 dB, S11@915=-4.57 dB
+
+-- pW = 26.0 mm --
+  pL=26.0mm ...
+  Solver: SuperLU (default)
+    → res=1140 MHz, worst ISM=-0.07 dB
+  pL=28.0mm ...
+  Solver: SuperLU (default)
+    → res=1060 MHz, worst ISM=-0.12 dB
+  pL=30.0mm ...
+  Solver: SuperLU (default)
+    → res=1010 MHz, worst ISM=-0.23 dB
+  pL=32.0mm ...
+  Solver: SuperLU (default)
+    → res=980 MHz, worst ISM=-0.39 dB
+  pL=34.0mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-6.12 dB
+  pL=36.0mm ...
+  Solver: SuperLU (default)
+    → res=890 MHz, worst ISM=-0.81 dB
+  pL=38.0mm ...
+  Solver: SuperLU (default)
+    → res=840 MHz, worst ISM=-0.15 dB
+  pL=40.0mm ...
+  Solver: SuperLU (default)
+    → res=780 MHz, worst ISM=-0.06 dB
+  pL=42.0mm ...
+  Solver: SuperLU (default)
+    → res=740 MHz, worst ISM=-0.04 dB
+  → probing est pL=34.42mm
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-8.33 dB, S11@915=-8.33 dB
+
+-- pW = 30.0 mm --
+  pL=26.0mm ...
+  Solver: SuperLU (default)
+    → res=1100 MHz, worst ISM=-0.10 dB
+  pL=28.0mm ...
+  Solver: SuperLU (default)
+    → res=1040 MHz, worst ISM=-0.15 dB
+  pL=30.0mm ...
+  Solver: SuperLU (default)
+    → res=980 MHz, worst ISM=-0.44 dB
+  pL=32.0mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-5.68 dB
+  pL=34.0mm ...
+  Solver: SuperLU (default)
+    → res=890 MHz, worst ISM=-0.89 dB
+  pL=36.0mm ...
+  Solver: SuperLU (default)
+    → res=850 MHz, worst ISM=-0.20 dB
+  pL=38.0mm ...
+  Solver: SuperLU (default)
+    → res=800 MHz, worst ISM=-0.08 dB
+  pL=40.0mm ...
+  Solver: SuperLU (default)
+    → res=760 MHz, worst ISM=-0.06 dB
+  pL=42.0mm ...
+  Solver: SuperLU (default)
+    → res=740 MHz, worst ISM=-0.05 dB
+  → probing est pL=32.42mm
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-3.16 dB, S11@915=-3.16 dB
+
+pW scan summary:
+  pW=18.0mm  pL=36.00mm  res=920 MHz  worst-ISM=-5.60 dB
+  pW=22.0mm  pL=34.96mm  res=930 MHz  worst-ISM=-4.57 dB
+  pW=26.0mm  pL=34.42mm  res=920 MHz  worst-ISM=-8.33 dB  <-- picked
+  pW=30.0mm  pL=32.42mm  res=930 MHz  worst-ISM=-3.16 dB
+
+  Selected pW=26.0mm, starting pL=34.42mm
+
+============================================================
+STEP 2: Patch-length fine scan
+============================================================
+  pL=33.425mm ...
+  Solver: SuperLU (default)
+    → res=950 MHz, worst ISM=-1.21 dB, S11@915=-1.21 dB
+  pL=33.625mm ...
+  Solver: SuperLU (default)
+    → res=940 MHz, worst ISM=-1.75 dB, S11@915=-1.75 dB
+  pL=33.825mm ...
+  Solver: SuperLU (default)
+    → res=940 MHz, worst ISM=-2.35 dB, S11@915=-2.35 dB
+  pL=34.025mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-3.56 dB, S11@915=-3.56 dB
+  pL=34.225mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-5.30 dB, S11@915=-5.30 dB
+  pL=34.425mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-8.33 dB, S11@915=-8.33 dB
+  pL=34.625mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-7.28 dB, S11@915=-10.78 dB
+  pL=34.825mm ...
+  Solver: SuperLU (default)
+    → res=910 MHz, worst ISM=-4.01 dB, S11@915=-10.36 dB
+  pL=35.025mm ...
+  Solver: SuperLU (default)
+    → res=910 MHz, worst ISM=-3.83 dB, S11@915=-10.41 dB
+  pL=35.225mm ...
+  Solver: SuperLU (default)
+    → res=910 MHz, worst ISM=-2.38 dB, S11@915=-7.97 dB
+  pL=35.425mm ...
+  Solver: SuperLU (default)
+    → res=900 MHz, worst ISM=-1.94 dB, S11@915=-6.05 dB
+    [monotone filter] dropping pL=33.82mm res=940 MHz (prev 940 MHz at pL=33.62mm — not monotone)
+    [monotone filter] dropping pL=34.22mm res=930 MHz (prev 930 MHz at pL=34.02mm — not monotone)
+    [monotone filter] dropping pL=34.62mm res=920 MHz (prev 920 MHz at pL=34.42mm — not monotone)
+    [monotone filter] dropping pL=35.02mm res=910 MHz (prev 910 MHz at pL=34.82mm — not monotone)
+    [monotone filter] dropping pL=35.22mm res=910 MHz (prev 910 MHz at pL=34.82mm — not monotone)
+
+  1 fine-scan points landed in-band. Picking pL=34.425mm with worst-ISM -8.33 dB.
+
+============================================================
+STEP 3: Feed-offset scan (matching)
+============================================================
+  fo=2.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-0.75 dB, S11@915=-0.79 dB
+  fo=3.00mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-1.62 dB, S11@915=-1.62 dB
+  fo=4.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-3.04 dB, S11@915=-4.32 dB
+  fo=5.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-5.47 dB, S11@915=-6.96 dB
+  fo=6.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-8.33 dB, S11@915=-8.33 dB
+  fo=7.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-11.73 dB, S11@915=-16.12 dB
+  fo=8.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-11.37 dB, S11@915=-12.19 dB
+  fo=9.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-8.25 dB, S11@915=-11.29 dB
+  fo=10.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-8.60 dB, S11@915=-9.27 dB
+  fo=11.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-7.57 dB, S11@915=-7.57 dB
+  fo=12.00mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-6.31 dB, S11@915=-6.31 dB
+  fo=13.00mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-5.67 dB, S11@915=-5.67 dB
+  fo=14.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-5.50 dB, S11@915=-5.50 dB
+  fo=15.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-4.95 dB, S11@915=-4.95 dB
+  fo=16.00mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-4.36 dB, S11@915=-4.36 dB
+  fo=17.00mm ...
+  Solver: SuperLU (default)
+    → res=920 MHz, worst ISM=-4.44 dB, S11@915=-4.44 dB
+  fo=18.00mm ...
+  Solver: SuperLU (default)
+    → res=930 MHz, worst ISM=-3.89 dB, S11@915=-3.89 dB
+
+  Best feed_offset = 7.00 mm (worst-ISM -11.73 dB, res 920 MHz)
+
+============================================================
+STEP 4: Final simulation
+============================================================
+Best parameters from scan:
+  patch_length: 34.42 mm
+  patch_width:  26.00 mm
+  short_span:   12.00 mm
+  feed_offset:  7.00 mm
+  scan worst-ISM: -11.73 dB
+  Solver: SuperLU (default)
+0:08:00.506900  INFO   : Setting frequency as [7.000e+08 7.050e+08 7.100e+08 7.150e+08 7.200e+08 7.250e+08 7.300e+08
+ 7.350e+08 7.400e+08 7.450e+08 7.500e+08 7.550e+08 7.600e+08 7.650e+08
+ 7.700e+08 7.750e+08 7.800e+08 7.850e+08 7.900e+08 7.950e+08 8.000e+08
+ 8.050e+08 8.100e+08 8.150e+08 8.200e+08 8.250e+08 8.300e+08 8.350e+08
+ 8.400e+08 8.450e+08 8.500e+08 8.550e+08 8.600e+08 8.650e+08 8.700e+08
+ 8.750e+08 8.800e+08 8.850e+08 8.900e+08 8.950e+08 9.000e+08 9.050e+08
+ 9.100e+08 9.150e+08 9.200e+08 9.250e+08 9.300e+08 9.350e+08 9.400e+08
+ 9.450e+08 9.500e+08 9.550e+08 9.600e+08 9.650e+08 9.700e+08 9.750e+08
+ 9.800e+08 9.850e+08 9.900e+08 9.950e+08 1.000e+09 1.005e+09 1.010e+09
+ 1.015e+09 1.020e+09 1.025e+09 1.030e+09 1.035e+09 1.040e+09 1.045e+09
+ 1.050e+09 1.055e+09 1.060e+09 1.065e+09 1.070e+09 1.075e+09 1.080e+09
+ 1.085e+09 1.090e+09 1.095e+09 1.100e+09 1.105e+09 1.110e+09 1.115e+09
+ 1.120e+09 1.125e+09 1.130e+09 1.135e+09 1.140e+09 1.145e+09 1.150e+09
+ 1.155e+09 1.160e+09 1.165e+09 1.170e+09 1.175e+09 1.180e+09 1.185e+09
+ 1.190e+09 1.195e+09 1.200e+09 1.205e+09 1.210e+09 1.215e+09 1.220e+09
+ 1.225e+09 1.230e+09 1.235e+09 1.240e+09 1.245e+09 1.250e+09 1.255e+09
+ 1.260e+09 1.265e+09 1.270e+09 1.275e+09 1.280e+09 1.285e+09 1.290e+09
+ 1.295e+09 1.300e+09]Hz.
+0:08:00.621464  INFO   : Starting mesh generation phase.
+0:08:00.621692  INFO   : Adding PEC boundary condition with tags [117, 118, 119, 120, 121, 122].
+0:08:00.824769  INFO   : GMSH Meshing complete!
+0:08:00.954153  WARNING: Domain with tag 2 has multiple geometries imposing a material to them: [Box(Box,3,[1, 2, 3, 4, 5, 6, 7]), GeoVolume(Union[Union[Union[Union[Union[Union[Box_0,Box_1],Box_2],Box_3],Box_4],Box_5],Box_6],3,[8, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14])]. Consider setting priorities to decide which volume is more important.
+0:08:00.954265  WARNING: Domain with tag 3 has multiple geometries imposing a material to them: [Box(Box,3,[1, 2, 3, 4, 5, 6, 7]), GeoVolume(Union[Union[Union[Union[Union[Union[Box_0,Box_1],Box_2],Box_3],Box_4],Box_5],Box_6],3,[8, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14])]. Consider setting priorities to decide which volume is more important.
+0:08:00.954297  WARNING: Domain with tag 4 has multiple geometries imposing a material to them: [Box(Box,3,[1, 2, 3, 4, 5, 6, 7]), GeoVolume(Union[Union[Union[Union[Union[Union[Box_0,Box_1],Box_2],Box_3],Box_4],Box_5],Box_6],3,[8, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14])]. Consider setting priorities to decide which volume is more important.
+0:08:00.954322  WARNING: Domain with tag 5 has multiple geometries imposing a material to them: [Box(Box,3,[1, 2, 3, 4, 5, 6, 7]), GeoVolume(Union[Union[Union[Union[Union[Union[Box_0,Box_1],Box_2],Box_3],Box_4],Box_5],Box_6],3,[8, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14])]. Consider setting priorities to decide which volume is more important.
+0:08:00.954340  WARNING: Domain with tag 6 has multiple geometries imposing a material to them: [Box(Box,3,[1, 2, 3, 4, 5, 6, 7]), GeoVolume(Union[Union[Union[Union[Union[Union[Box_0,Box_1],Box_2],Box_3],Box_4],Box_5],Box_6],3,[8, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14])]. Consider setting priorities to decide which volume is more important.
+0:08:00.954360  WARNING: Domain with tag 7 has multiple geometries imposing a material to them: [Box(Box,3,[1, 2, 3, 4, 5, 6, 7]), GeoVolume(Union[Union[Union[Union[Union[Union[Box_0,Box_1],Box_2],Box_3],Box_4],Box_5],Box_6],3,[8, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14])]. Consider setting priorities to decide which volume is more important.
+0:08:00.954629  INFO   : Pre-assembling matrices of 121 frequency points.
+0:08:00.954730  INFO   : Precomputing group 0.
+0:08:03.130289  INFO   : Starting distributed solve of 121 jobs with 2 threads.
+0:08:03.143563  INFO   : [p00/t01-j001] Calling SuperLU Solver.
+0:08:03.154046  INFO   : [p00/t02-j002] Calling SuperLU Solver.
+0:08:03.326746  INFO   : [p00/t01-j001] Elapsed time taken: 0.183 seconds
+0:08:03.336919  INFO   : [p00/t02-j002] Elapsed time taken: 0.183 seconds
+0:08:03.338415  INFO   : [p00/t01-j003] Calling SuperLU Solver.
+0:08:03.351036  INFO   : [p00/t02-j004] Calling SuperLU Solver.
+0:08:03.507525  INFO   : [p00/t01-j003] Elapsed time taken: 0.169 seconds
+0:08:03.514936  INFO   : [p00/t02-j004] Elapsed time taken: 0.164 seconds
+0:08:03.520582  INFO   : [p00/t01-j005] Calling SuperLU Solver.
+0:08:03.531186  INFO   : [p00/t02-j006] Calling SuperLU Solver.
+0:08:03.668448  INFO   : [p00/t01-j005] Elapsed time taken: 0.148 seconds
+0:08:03.679004  INFO   : [p00/t01-j007] Calling SuperLU Solver.
+0:08:03.685944  INFO   : [p00/t02-j006] Elapsed time taken: 0.155 seconds
+0:08:03.695522  INFO   : [p00/t02-j008] Calling SuperLU Solver.
+0:08:03.825985  INFO   : [p00/t01-j007] Elapsed time taken: 0.147 seconds
+0:08:03.835639  INFO   : [p00/t01-j009] Calling SuperLU Solver.
+0:08:03.848674  INFO   : [p00/t02-j008] Elapsed time taken: 0.153 seconds
+0:08:03.858254  INFO   : [p00/t02-j010] Calling SuperLU Solver.
+0:08:03.985087  INFO   : [p00/t01-j009] Elapsed time taken: 0.149 seconds
+0:08:03.993019  INFO   : [p00/t01-j011] Calling SuperLU Solver.
+0:08:04.009470  INFO   : [p00/t02-j010] Elapsed time taken: 0.151 seconds
+0:08:04.018190  INFO   : [p00/t02-j012] Calling SuperLU Solver.
+0:08:04.139425  INFO   : [p00/t01-j011] Elapsed time taken: 0.146 seconds
+0:08:04.149074  INFO   : [p00/t01-j013] Calling SuperLU Solver.
+0:08:04.167328  INFO   : [p00/t02-j012] Elapsed time taken: 0.149 seconds
+0:08:04.177110  INFO   : [p00/t02-j014] Calling SuperLU Solver.
+0:08:04.298552  INFO   : [p00/t01-j013] Elapsed time taken: 0.149 seconds
+0:08:04.309938  INFO   : [p00/t01-j015] Calling SuperLU Solver.
+0:08:04.330072  INFO   : [p00/t02-j014] Elapsed time taken: 0.153 seconds
+0:08:04.340218  INFO   : [p00/t02-j016] Calling SuperLU Solver.
+0:08:04.459712  INFO   : [p00/t01-j015] Elapsed time taken: 0.150 seconds
+0:08:04.470328  INFO   : [p00/t01-j017] Calling SuperLU Solver.
+0:08:04.489880  INFO   : [p00/t02-j016] Elapsed time taken: 0.150 seconds
+0:08:04.499638  INFO   : [p00/t02-j018] Calling SuperLU Solver.
+0:08:04.624805  INFO   : [p00/t01-j017] Elapsed time taken: 0.154 seconds
+0:08:04.635131  INFO   : [p00/t01-j019] Calling SuperLU Solver.
+0:08:04.657369  INFO   : [p00/t02-j018] Elapsed time taken: 0.158 seconds
+0:08:04.666998  INFO   : [p00/t02-j020] Calling SuperLU Solver.
+0:08:04.784088  INFO   : [p00/t01-j019] Elapsed time taken: 0.149 seconds
+0:08:04.795540  INFO   : [p00/t01-j021] Calling SuperLU Solver.
+0:08:04.819577  INFO   : [p00/t02-j020] Elapsed time taken: 0.153 seconds
+0:08:04.831802  INFO   : [p00/t02-j022] Calling SuperLU Solver.
+0:08:04.947233  INFO   : [p00/t01-j021] Elapsed time taken: 0.152 seconds
+0:08:04.957182  INFO   : [p00/t01-j023] Calling SuperLU Solver.
+0:08:04.992086  INFO   : [p00/t02-j022] Elapsed time taken: 0.160 seconds
+0:08:05.003333  INFO   : [p00/t02-j024] Calling SuperLU Solver.
+0:08:05.156029  INFO   : [p00/t01-j023] Elapsed time taken: 0.199 seconds
+0:08:05.167722  INFO   : [p00/t01-j025] Calling SuperLU Solver.
+0:08:05.191984  INFO   : [p00/t02-j024] Elapsed time taken: 0.189 seconds
+0:08:05.203612  INFO   : [p00/t02-j026] Calling SuperLU Solver.
+0:08:05.352069  INFO   : [p00/t01-j025] Elapsed time taken: 0.184 seconds
+0:08:05.366720  INFO   : [p00/t01-j027] Calling SuperLU Solver.
+0:08:05.374269  INFO   : [p00/t02-j026] Elapsed time taken: 0.171 seconds
+0:08:05.385242  INFO   : [p00/t02-j028] Calling SuperLU Solver.
+0:08:05.526053  INFO   : [p00/t01-j027] Elapsed time taken: 0.159 seconds
+0:08:05.539253  INFO   : [p00/t01-j029] Calling SuperLU Solver.
+0:08:05.546293  INFO   : [p00/t02-j028] Elapsed time taken: 0.161 seconds
+0:08:05.557291  INFO   : [p00/t02-j030] Calling SuperLU Solver.
+0:08:05.690540  INFO   : [p00/t01-j029] Elapsed time taken: 0.151 seconds
+0:08:05.701019  INFO   : [p00/t01-j031] Calling SuperLU Solver.
+0:08:05.714445  INFO   : [p00/t02-j030] Elapsed time taken: 0.157 seconds
+0:08:05.724235  INFO   : [p00/t02-j032] Calling SuperLU Solver.
+0:08:05.858677  INFO   : [p00/t01-j031] Elapsed time taken: 0.158 seconds
+0:08:05.870521  INFO   : [p00/t01-j033] Calling SuperLU Solver.
+0:08:05.906053  INFO   : [p00/t02-j032] Elapsed time taken: 0.182 seconds
+0:08:05.918056  INFO   : [p00/t02-j034] Calling SuperLU Solver.
+0:08:06.036681  INFO   : [p00/t01-j033] Elapsed time taken: 0.166 seconds
+0:08:06.051257  INFO   : [p00/t01-j035] Calling SuperLU Solver.
+0:08:06.080657  INFO   : [p00/t02-j034] Elapsed time taken: 0.163 seconds
+0:08:06.091181  INFO   : [p00/t02-j036] Calling SuperLU Solver.
+0:08:06.232150  INFO   : [p00/t01-j035] Elapsed time taken: 0.181 seconds
+0:08:06.247973  INFO   : [p00/t01-j037] Calling SuperLU Solver.
+0:08:06.257789  INFO   : [p00/t02-j036] Elapsed time taken: 0.167 seconds
+0:08:06.268857  INFO   : [p00/t02-j038] Calling SuperLU Solver.
+0:08:06.417055  INFO   : [p00/t01-j037] Elapsed time taken: 0.169 seconds
+0:08:06.426366  INFO   : [p00/t02-j038] Elapsed time taken: 0.157 seconds
+0:08:06.434172  INFO   : [p00/t01-j039] Calling SuperLU Solver.
+0:08:06.445806  INFO   : [p00/t02-j040] Calling SuperLU Solver.
+0:08:06.602510  INFO   : [p00/t01-j039] Elapsed time taken: 0.168 seconds
+0:08:06.606841  INFO   : [p00/t02-j040] Elapsed time taken: 0.161 seconds
+0:08:06.615505  INFO   : [p00/t01-j041] Calling SuperLU Solver.
+0:08:06.624518  INFO   : [p00/t02-j042] Calling SuperLU Solver.
+0:08:06.782260  INFO   : [p00/t01-j041] Elapsed time taken: 0.167 seconds
+0:08:06.795148  INFO   : [p00/t01-j043] Calling SuperLU Solver.
+0:08:06.803962  INFO   : [p00/t02-j042] Elapsed time taken: 0.179 seconds
+0:08:06.814235  INFO   : [p00/t02-j044] Calling SuperLU Solver.
+0:08:06.953962  INFO   : [p00/t01-j043] Elapsed time taken: 0.159 seconds
+0:08:06.964049  INFO   : [p00/t01-j045] Calling SuperLU Solver.
+0:08:06.982133  INFO   : [p00/t02-j044] Elapsed time taken: 0.168 seconds
+0:08:06.993716  INFO   : [p00/t02-j046] Calling SuperLU Solver.
+0:08:07.114264  INFO   : [p00/t01-j045] Elapsed time taken: 0.150 seconds
+0:08:07.126315  INFO   : [p00/t01-j047] Calling SuperLU Solver.
+0:08:07.149082  INFO   : [p00/t02-j046] Elapsed time taken: 0.155 seconds
+0:08:07.163420  INFO   : [p00/t02-j048] Calling SuperLU Solver.
+0:08:07.284483  INFO   : [p00/t01-j047] Elapsed time taken: 0.158 seconds
+0:08:07.297196  INFO   : [p00/t01-j049] Calling SuperLU Solver.
+0:08:07.349523  INFO   : [p00/t02-j048] Elapsed time taken: 0.186 seconds
+0:08:07.362732  INFO   : [p00/t02-j050] Calling SuperLU Solver.
+0:08:07.449609  INFO   : [p00/t01-j049] Elapsed time taken: 0.152 seconds
+0:08:07.460134  INFO   : [p00/t01-j051] Calling SuperLU Solver.
+0:08:07.513151  INFO   : [p00/t02-j050] Elapsed time taken: 0.150 seconds
+0:08:07.523081  INFO   : [p00/t02-j052] Calling SuperLU Solver.
+0:08:07.605763  INFO   : [p00/t01-j051] Elapsed time taken: 0.146 seconds
+0:08:07.616485  INFO   : [p00/t01-j053] Calling SuperLU Solver.
+0:08:07.676055  INFO   : [p00/t02-j052] Elapsed time taken: 0.153 seconds
+0:08:07.686884  INFO   : [p00/t02-j054] Calling SuperLU Solver.
+0:08:07.769372  INFO   : [p00/t01-j053] Elapsed time taken: 0.153 seconds
+0:08:07.779270  INFO   : [p00/t01-j055] Calling SuperLU Solver.
+0:08:07.847059  INFO   : [p00/t02-j054] Elapsed time taken: 0.160 seconds
+0:08:07.859518  INFO   : [p00/t02-j056] Calling SuperLU Solver.
+0:08:07.930540  INFO   : [p00/t01-j055] Elapsed time taken: 0.151 seconds
+0:08:07.940492  INFO   : [p00/t01-j057] Calling SuperLU Solver.
+0:08:08.022511  INFO   : [p00/t02-j056] Elapsed time taken: 0.163 seconds
+0:08:08.033539  INFO   : [p00/t02-j058] Calling SuperLU Solver.
+0:08:08.095483  INFO   : [p00/t01-j057] Elapsed time taken: 0.155 seconds
+0:08:08.106409  INFO   : [p00/t01-j059] Calling SuperLU Solver.
+0:08:08.190395  INFO   : [p00/t02-j058] Elapsed time taken: 0.157 seconds
+0:08:08.201799  INFO   : [p00/t02-j060] Calling SuperLU Solver.
+0:08:08.260958  INFO   : [p00/t01-j059] Elapsed time taken: 0.155 seconds
+0:08:08.272237  INFO   : [p00/t01-j061] Calling SuperLU Solver.
+0:08:08.363290  INFO   : [p00/t02-j060] Elapsed time taken: 0.161 seconds
+0:08:08.374682  INFO   : [p00/t02-j062] Calling SuperLU Solver.
+0:08:08.425994  INFO   : [p00/t01-j061] Elapsed time taken: 0.154 seconds
+0:08:08.437145  INFO   : [p00/t01-j063] Calling SuperLU Solver.
+0:08:08.530036  INFO   : [p00/t02-j062] Elapsed time taken: 0.155 seconds
+0:08:08.540767  INFO   : [p00/t02-j064] Calling SuperLU Solver.
+0:08:08.590200  INFO   : [p00/t01-j063] Elapsed time taken: 0.153 seconds
+0:08:08.600303  INFO   : [p00/t01-j065] Calling SuperLU Solver.
+0:08:08.700085  INFO   : [p00/t02-j064] Elapsed time taken: 0.159 seconds
+0:08:08.712281  INFO   : [p00/t02-j066] Calling SuperLU Solver.
+0:08:08.757753  INFO   : [p00/t01-j065] Elapsed time taken: 0.157 seconds
+0:08:08.772412  INFO   : [p00/t01-j067] Calling SuperLU Solver.
+0:08:08.879787  INFO   : [p00/t02-j066] Elapsed time taken: 0.167 seconds
+0:08:08.889621  INFO   : [p00/t02-j068] Calling SuperLU Solver.
+0:08:08.930831  INFO   : [p00/t01-j067] Elapsed time taken: 0.158 seconds
+0:08:08.941711  INFO   : [p00/t01-j069] Calling SuperLU Solver.
+0:08:09.046287  INFO   : [p00/t02-j068] Elapsed time taken: 0.157 seconds
+0:08:09.056535  INFO   : [p00/t02-j070] Calling SuperLU Solver.
+0:08:09.097262  INFO   : [p00/t01-j069] Elapsed time taken: 0.156 seconds
+0:08:09.110125  INFO   : [p00/t01-j071] Calling SuperLU Solver.
+0:08:09.236552  INFO   : [p00/t02-j070] Elapsed time taken: 0.180 seconds
+0:08:09.248761  INFO   : [p00/t02-j072] Calling SuperLU Solver.
+0:08:09.323344  INFO   : [p00/t01-j071] Elapsed time taken: 0.213 seconds
+0:08:09.337273  INFO   : [p00/t01-j073] Calling SuperLU Solver.
+0:08:09.465200  INFO   : [p00/t02-j072] Elapsed time taken: 0.216 seconds
+0:08:09.477032  INFO   : [p00/t02-j074] Calling SuperLU Solver.
+0:08:09.526171  INFO   : [p00/t01-j073] Elapsed time taken: 0.189 seconds
+0:08:09.539995  INFO   : [p00/t01-j075] Calling SuperLU Solver.
+0:08:09.647706  INFO   : [p00/t02-j074] Elapsed time taken: 0.171 seconds
+0:08:09.658432  INFO   : [p00/t02-j076] Calling SuperLU Solver.
+0:08:09.726824  INFO   : [p00/t01-j075] Elapsed time taken: 0.187 seconds
+0:08:09.739328  INFO   : [p00/t01-j077] Calling SuperLU Solver.
+0:08:09.809847  INFO   : [p00/t02-j076] Elapsed time taken: 0.151 seconds
+0:08:09.826987  INFO   : [p00/t02-j078] Calling SuperLU Solver.
+0:08:09.947026  INFO   : [p00/t01-j077] Elapsed time taken: 0.208 seconds
+0:08:09.985251  INFO   : [p00/t01-j079] Calling SuperLU Solver.
+0:08:10.041282  INFO   : [p00/t02-j078] Elapsed time taken: 0.214 seconds
+0:08:10.054836  INFO   : [p00/t02-j080] Calling SuperLU Solver.
+0:08:10.182434  INFO   : [p00/t01-j079] Elapsed time taken: 0.197 seconds
+0:08:10.192270  INFO   : [p00/t01-j081] Calling SuperLU Solver.
+0:08:10.208111  INFO   : [p00/t02-j080] Elapsed time taken: 0.153 seconds
+0:08:10.219305  INFO   : [p00/t02-j082] Calling SuperLU Solver.
+0:08:10.365724  INFO   : [p00/t01-j081] Elapsed time taken: 0.173 seconds
+0:08:10.372594  INFO   : [p00/t02-j082] Elapsed time taken: 0.153 seconds
+0:08:10.378830  INFO   : [p00/t01-j083] Calling SuperLU Solver.
+0:08:10.389504  INFO   : [p00/t02-j084] Calling SuperLU Solver.
+0:08:10.523436  INFO   : [p00/t01-j083] Elapsed time taken: 0.145 seconds
+0:08:10.532294  INFO   : [p00/t02-j084] Elapsed time taken: 0.143 seconds
+0:08:10.536072  INFO   : [p00/t01-j085] Calling SuperLU Solver.
+0:08:10.549097  INFO   : [p00/t02-j086] Calling SuperLU Solver.
+0:08:10.686255  INFO   : [p00/t01-j085] Elapsed time taken: 0.150 seconds
+0:08:10.691529  INFO   : [p00/t02-j086] Elapsed time taken: 0.142 seconds
+0:08:10.698522  INFO   : [p00/t01-j087] Calling SuperLU Solver.
+0:08:10.708817  INFO   : [p00/t02-j088] Calling SuperLU Solver.
+0:08:10.870271  INFO   : [p00/t01-j087] Elapsed time taken: 0.172 seconds
+0:08:10.881447  INFO   : [p00/t01-j089] Calling SuperLU Solver.
+0:08:10.898086  INFO   : [p00/t02-j088] Elapsed time taken: 0.189 seconds
+0:08:10.908343  INFO   : [p00/t02-j090] Calling SuperLU Solver.
+0:08:11.022601  INFO   : [p00/t01-j089] Elapsed time taken: 0.141 seconds
+0:08:11.035056  INFO   : [p00/t01-j091] Calling SuperLU Solver.
+0:08:11.056583  INFO   : [p00/t02-j090] Elapsed time taken: 0.148 seconds
+0:08:11.068446  INFO   : [p00/t02-j092] Calling SuperLU Solver.
+0:08:11.188977  INFO   : [p00/t01-j091] Elapsed time taken: 0.154 seconds
+0:08:11.198712  INFO   : [p00/t01-j093] Calling SuperLU Solver.
+0:08:11.240229  INFO   : [p00/t02-j092] Elapsed time taken: 0.172 seconds
+0:08:11.251920  INFO   : [p00/t02-j094] Calling SuperLU Solver.
+0:08:11.351430  INFO   : [p00/t01-j093] Elapsed time taken: 0.153 seconds
+0:08:11.361306  INFO   : [p00/t01-j095] Calling SuperLU Solver.
+0:08:11.425521  INFO   : [p00/t02-j094] Elapsed time taken: 0.174 seconds
+0:08:11.437054  INFO   : [p00/t02-j096] Calling SuperLU Solver.
+0:08:11.523411  INFO   : [p00/t01-j095] Elapsed time taken: 0.162 seconds
+0:08:11.537431  INFO   : [p00/t01-j097] Calling SuperLU Solver.
+0:08:11.613484  INFO   : [p00/t02-j096] Elapsed time taken: 0.176 seconds
+0:08:11.625467  INFO   : [p00/t02-j098] Calling SuperLU Solver.
+0:08:11.708764  INFO   : [p00/t01-j097] Elapsed time taken: 0.171 seconds
+0:08:11.720794  INFO   : [p00/t01-j099] Calling SuperLU Solver.
+0:08:11.775606  INFO   : [p00/t02-j098] Elapsed time taken: 0.150 seconds
+0:08:11.788176  INFO   : [p00/t02-j100] Calling SuperLU Solver.
+0:08:11.875017  INFO   : [p00/t01-j099] Elapsed time taken: 0.154 seconds
+0:08:11.885165  INFO   : [p00/t01-j101] Calling SuperLU Solver.
+0:08:11.943682  INFO   : [p00/t02-j100] Elapsed time taken: 0.155 seconds
+0:08:11.955069  INFO   : [p00/t02-j102] Calling SuperLU Solver.
+0:08:12.032664  INFO   : [p00/t01-j101] Elapsed time taken: 0.147 seconds
+0:08:12.047817  INFO   : [p00/t01-j103] Calling SuperLU Solver.
+0:08:12.118447  INFO   : [p00/t02-j102] Elapsed time taken: 0.163 seconds
+0:08:12.128766  INFO   : [p00/t02-j104] Calling SuperLU Solver.
+0:08:12.201074  INFO   : [p00/t01-j103] Elapsed time taken: 0.153 seconds
+0:08:12.211413  INFO   : [p00/t01-j105] Calling SuperLU Solver.
+0:08:12.279826  INFO   : [p00/t02-j104] Elapsed time taken: 0.151 seconds
+0:08:12.290543  INFO   : [p00/t02-j106] Calling SuperLU Solver.
+0:08:12.450667  INFO   : [p00/t01-j105] Elapsed time taken: 0.239 seconds
+0:08:12.473044  INFO   : [p00/t01-j107] Calling SuperLU Solver.
+0:08:12.510674  INFO   : [p00/t02-j106] Elapsed time taken: 0.220 seconds
+0:08:12.525369  INFO   : [p00/t02-j108] Calling SuperLU Solver.
+0:08:12.674222  INFO   : [p00/t01-j107] Elapsed time taken: 0.201 seconds
+0:08:12.686199  INFO   : [p00/t01-j109] Calling SuperLU Solver.
+0:08:12.723233  INFO   : [p00/t02-j108] Elapsed time taken: 0.198 seconds
+0:08:12.735252  INFO   : [p00/t02-j110] Calling SuperLU Solver.
+0:08:12.847193  INFO   : [p00/t01-j109] Elapsed time taken: 0.161 seconds
+0:08:12.858798  INFO   : [p00/t01-j111] Calling SuperLU Solver.
+0:08:12.889732  INFO   : [p00/t02-j110] Elapsed time taken: 0.154 seconds
+0:08:12.901646  INFO   : [p00/t02-j112] Calling SuperLU Solver.
+0:08:13.017695  INFO   : [p00/t01-j111] Elapsed time taken: 0.159 seconds
+0:08:13.030048  INFO   : [p00/t01-j113] Calling SuperLU Solver.
+0:08:13.072308  INFO   : [p00/t02-j112] Elapsed time taken: 0.171 seconds
+0:08:13.087039  INFO   : [p00/t02-j114] Calling SuperLU Solver.
+0:08:13.201065  INFO   : [p00/t01-j113] Elapsed time taken: 0.171 seconds
+0:08:13.215280  INFO   : [p00/t01-j115] Calling SuperLU Solver.
+0:08:13.271369  INFO   : [p00/t02-j114] Elapsed time taken: 0.184 seconds
+0:08:13.284958  INFO   : [p00/t02-j116] Calling SuperLU Solver.
+0:08:13.424603  INFO   : [p00/t01-j115] Elapsed time taken: 0.209 seconds
+0:08:13.436223  INFO   : [p00/t01-j117] Calling SuperLU Solver.
+0:08:13.534239  INFO   : [p00/t02-j116] Elapsed time taken: 0.249 seconds
+0:08:13.545657  INFO   : [p00/t02-j118] Calling SuperLU Solver.
+0:08:13.716992  INFO   : [p00/t01-j117] Elapsed time taken: 0.281 seconds
+0:08:13.736285  INFO   : [p00/t01-j119] Calling SuperLU Solver.
+0:08:13.808951  INFO   : [p00/t02-j118] Elapsed time taken: 0.263 seconds
+0:08:13.842666  INFO   : [p00/t02-j120] Calling SuperLU Solver.
+0:08:13.936552  INFO   : [p00/t01-j119] Elapsed time taken: 0.200 seconds
+0:08:13.950896  INFO   : [p00/t01-j121] Calling SuperLU Solver.
+0:08:14.023013  INFO   : [p00/t02-j120] Elapsed time taken: 0.180 seconds
+0:08:14.128731  INFO   : [p00/t01-j121] Elapsed time taken: 0.178 seconds
+0:08:14.129924  INFO   : Solving complete
+0:08:14.131343  INFO   : Computing S-parameters
+0:08:14.136009  INFO   : Post Processing simulation frequency = 0.700 GHz
+0:08:14.145800  INFO   : Post Processing simulation frequency = 0.705 GHz
+0:08:14.154927  INFO   : Post Processing simulation frequency = 0.710 GHz
+0:08:14.164602  INFO   : Post Processing simulation frequency = 0.715 GHz
+0:08:14.175908  INFO   : Post Processing simulation frequency = 0.720 GHz
+0:08:14.186138  INFO   : Post Processing simulation frequency = 0.725 GHz
+0:08:14.196252  INFO   : Post Processing simulation frequency = 0.730 GHz
+0:08:14.205179  INFO   : Post Processing simulation frequency = 0.735 GHz
+0:08:14.214175  INFO   : Post Processing simulation frequency = 0.740 GHz
+0:08:14.224034  INFO   : Post Processing simulation frequency = 0.745 GHz
+0:08:14.233395  INFO   : Post Processing simulation frequency = 0.750 GHz
+0:08:14.242669  INFO   : Post Processing simulation frequency = 0.755 GHz
+0:08:14.252032  INFO   : Post Processing simulation frequency = 0.760 GHz
+0:08:14.263150  INFO   : Post Processing simulation frequency = 0.765 GHz
+0:08:14.272600  INFO   : Post Processing simulation frequency = 0.770 GHz
+0:08:14.281714  INFO   : Post Processing simulation frequency = 0.775 GHz
+0:08:14.290408  INFO   : Post Processing simulation frequency = 0.780 GHz
+0:08:14.301260  INFO   : Post Processing simulation frequency = 0.785 GHz
+0:08:14.309857  INFO   : Post Processing simulation frequency = 0.790 GHz
+0:08:14.318550  INFO   : Post Processing simulation frequency = 0.795 GHz
+0:08:14.327122  INFO   : Post Processing simulation frequency = 0.800 GHz
+0:08:14.335972  INFO   : Post Processing simulation frequency = 0.805 GHz
+0:08:14.344237  INFO   : Post Processing simulation frequency = 0.810 GHz
+0:08:14.352943  INFO   : Post Processing simulation frequency = 0.815 GHz
+0:08:14.361701  INFO   : Post Processing simulation frequency = 0.820 GHz
+0:08:14.370496  INFO   : Post Processing simulation frequency = 0.825 GHz
+0:08:14.378944  INFO   : Post Processing simulation frequency = 0.830 GHz
+0:08:14.387460  INFO   : Post Processing simulation frequency = 0.835 GHz
+0:08:14.396055  INFO   : Post Processing simulation frequency = 0.840 GHz
+0:08:14.406437  INFO   : Post Processing simulation frequency = 0.845 GHz
+0:08:14.415121  INFO   : Post Processing simulation frequency = 0.850 GHz
+0:08:14.423709  INFO   : Post Processing simulation frequency = 0.855 GHz
+0:08:14.432485  INFO   : Post Processing simulation frequency = 0.860 GHz
+0:08:14.441089  INFO   : Post Processing simulation frequency = 0.865 GHz
+0:08:14.449909  INFO   : Post Processing simulation frequency = 0.870 GHz
+0:08:14.458285  INFO   : Post Processing simulation frequency = 0.875 GHz
+0:08:14.468379  INFO   : Post Processing simulation frequency = 0.880 GHz
+0:08:14.477000  INFO   : Post Processing simulation frequency = 0.885 GHz
+0:08:14.485809  INFO   : Post Processing simulation frequency = 0.890 GHz
+0:08:14.494760  INFO   : Post Processing simulation frequency = 0.895 GHz
+0:08:14.505493  INFO   : Post Processing simulation frequency = 0.900 GHz
+0:08:14.517150  INFO   : Post Processing simulation frequency = 0.905 GHz
+0:08:14.526130  INFO   : Post Processing simulation frequency = 0.910 GHz
+0:08:14.536696  INFO   : Post Processing simulation frequency = 0.915 GHz
+0:08:14.545474  INFO   : Post Processing simulation frequency = 0.920 GHz
+0:08:14.553999  INFO   : Post Processing simulation frequency = 0.925 GHz
+0:08:14.562298  INFO   : Post Processing simulation frequency = 0.930 GHz
+0:08:14.570945  INFO   : Post Processing simulation frequency = 0.935 GHz
+0:08:14.579714  INFO   : Post Processing simulation frequency = 0.940 GHz
+0:08:14.588205  INFO   : Post Processing simulation frequency = 0.945 GHz
+0:08:14.596550  INFO   : Post Processing simulation frequency = 0.950 GHz
+0:08:14.604799  INFO   : Post Processing simulation frequency = 0.955 GHz
+0:08:14.613412  INFO   : Post Processing simulation frequency = 0.960 GHz
+0:08:14.621531  INFO   : Post Processing simulation frequency = 0.965 GHz
+0:08:14.630014  INFO   : Post Processing simulation frequency = 0.970 GHz
+0:08:14.638598  INFO   : Post Processing simulation frequency = 0.975 GHz
+0:08:14.647335  INFO   : Post Processing simulation frequency = 0.980 GHz
+0:08:14.656667  INFO   : Post Processing simulation frequency = 0.985 GHz
+0:08:14.665475  INFO   : Post Processing simulation frequency = 0.990 GHz
+0:08:14.674951  INFO   : Post Processing simulation frequency = 0.995 GHz
+0:08:14.684217  INFO   : Post Processing simulation frequency = 1.000 GHz
+0:08:14.694372  INFO   : Post Processing simulation frequency = 1.005 GHz
+0:08:14.703971  INFO   : Post Processing simulation frequency = 1.010 GHz
+0:08:14.713060  INFO   : Post Processing simulation frequency = 1.015 GHz
+0:08:14.721536  INFO   : Post Processing simulation frequency = 1.020 GHz
+0:08:14.730450  INFO   : Post Processing simulation frequency = 1.025 GHz
+0:08:14.739492  INFO   : Post Processing simulation frequency = 1.030 GHz
+0:08:14.748633  INFO   : Post Processing simulation frequency = 1.035 GHz
+0:08:14.757271  INFO   : Post Processing simulation frequency = 1.040 GHz
+0:08:14.766153  INFO   : Post Processing simulation frequency = 1.045 GHz
+0:08:14.774613  INFO   : Post Processing simulation frequency = 1.050 GHz
+0:08:14.783645  INFO   : Post Processing simulation frequency = 1.055 GHz
+0:08:14.792282  INFO   : Post Processing simulation frequency = 1.060 GHz
+0:08:14.801792  INFO   : Post Processing simulation frequency = 1.065 GHz
+0:08:14.810909  INFO   : Post Processing simulation frequency = 1.070 GHz
+0:08:14.819843  INFO   : Post Processing simulation frequency = 1.075 GHz
+0:08:14.828534  INFO   : Post Processing simulation frequency = 1.080 GHz
+0:08:14.837408  INFO   : Post Processing simulation frequency = 1.085 GHz
+0:08:14.848657  INFO   : Post Processing simulation frequency = 1.090 GHz
+0:08:14.857778  INFO   : Post Processing simulation frequency = 1.095 GHz
+0:08:14.866830  INFO   : Post Processing simulation frequency = 1.100 GHz
+0:08:14.875695  INFO   : Post Processing simulation frequency = 1.105 GHz
+0:08:14.884674  INFO   : Post Processing simulation frequency = 1.110 GHz
+0:08:14.893334  INFO   : Post Processing simulation frequency = 1.115 GHz
+0:08:14.902145  INFO   : Post Processing simulation frequency = 1.120 GHz
+0:08:14.911879  INFO   : Post Processing simulation frequency = 1.125 GHz
+0:08:14.920545  INFO   : Post Processing simulation frequency = 1.130 GHz
+0:08:14.929034  INFO   : Post Processing simulation frequency = 1.135 GHz
+0:08:14.938139  INFO   : Post Processing simulation frequency = 1.140 GHz
+0:08:14.946464  INFO   : Post Processing simulation frequency = 1.145 GHz
+0:08:14.954969  INFO   : Post Processing simulation frequency = 1.150 GHz
+0:08:14.965104  INFO   : Post Processing simulation frequency = 1.155 GHz
+0:08:14.974157  INFO   : Post Processing simulation frequency = 1.160 GHz
+0:08:14.982608  INFO   : Post Processing simulation frequency = 1.165 GHz
+0:08:14.990979  INFO   : Post Processing simulation frequency = 1.170 GHz
+0:08:14.999739  INFO   : Post Processing simulation frequency = 1.175 GHz
+0:08:15.008782  INFO   : Post Processing simulation frequency = 1.180 GHz
+0:08:15.018356  INFO   : Post Processing simulation frequency = 1.185 GHz
+0:08:15.027147  INFO   : Post Processing simulation frequency = 1.190 GHz
+0:08:15.036564  INFO   : Post Processing simulation frequency = 1.195 GHz
+0:08:15.046493  INFO   : Post Processing simulation frequency = 1.200 GHz
+0:08:15.055114  INFO   : Post Processing simulation frequency = 1.205 GHz
+0:08:15.063763  INFO   : Post Processing simulation frequency = 1.210 GHz
+0:08:15.072043  INFO   : Post Processing simulation frequency = 1.215 GHz
+0:08:15.080828  INFO   : Post Processing simulation frequency = 1.220 GHz
+0:08:15.090177  INFO   : Post Processing simulation frequency = 1.225 GHz
+0:08:15.098746  INFO   : Post Processing simulation frequency = 1.230 GHz
+0:08:15.107581  INFO   : Post Processing simulation frequency = 1.235 GHz
+0:08:15.115901  INFO   : Post Processing simulation frequency = 1.240 GHz
+0:08:15.124811  INFO   : Post Processing simulation frequency = 1.245 GHz
+0:08:15.134033  INFO   : Post Processing simulation frequency = 1.250 GHz
+0:08:15.144594  INFO   : Post Processing simulation frequency = 1.255 GHz
+0:08:15.153716  INFO   : Post Processing simulation frequency = 1.260 GHz
+0:08:15.162485  INFO   : Post Processing simulation frequency = 1.265 GHz
+0:08:15.171000  INFO   : Post Processing simulation frequency = 1.270 GHz
+0:08:15.179494  INFO   : Post Processing simulation frequency = 1.275 GHz
+0:08:15.188280  INFO   : Post Processing simulation frequency = 1.280 GHz
+0:08:15.198685  INFO   : Post Processing simulation frequency = 1.285 GHz
+0:08:15.208799  INFO   : Post Processing simulation frequency = 1.290 GHz
+0:08:15.219385  INFO   : Post Processing simulation frequency = 1.295 GHz
+0:08:15.229102  INFO   : Post Processing simulation frequency = 1.300 GHz
+0:08:15.233429  INFO   : Simulation Complete!
+0:08:15.233483  INFO   : Elapsed time = 14.30 seconds.
+Touchstone exported to out/optimised.s1p
+CSV exported to out/optimised_s11.csv
+
+Final Results:
+  S11 @ 915 MHz:     -7.17 dB
+  Best match:        -35.55 dB @ 925.0 MHz
+  -10 dB bandwidth:  920 – 930 MHz (10 MHz)
+
+  ISM band AU915 915–928 MHz:
+    worst S11:       -7.17 dB @ 915 MHz
+    best S11:        -35.53 dB @ 925 MHz
+    resonance in band (915–928): YES (925 MHz)
+    spec (<= -10 dB across band + resonance in band): FAIL
+
+  Optimal params: patch_length=34.42mm, patch_width=26.00mm, short_span=12.00mm, feed_offset=7.00mm (shorted-patch PIFA, 100x80 FR-4)
