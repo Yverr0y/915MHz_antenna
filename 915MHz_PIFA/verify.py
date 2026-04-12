@@ -214,7 +214,7 @@ vswr_dense = (1 + np.abs(s11_dense)) / (1 - np.abs(s11_dense))
 fig, ax = plt.subplots(figsize=(10, 5))
 ax.plot(freq_dense / 1e6, s11_dense_dB, 'b-', linewidth=1.5, label='S11')
 ax.axhline(-10, color='r', linestyle='--', alpha=0.7, label='-10 dB threshold')
-ax.axvspan(915, 928, alpha=0.15, color='green', label='AU915 band (915-928 MHz)')
+ax.axvspan(915, 928, alpha=0.15, color='green', label='AU925 band (915-928 MHz)')
 ax.axvline(res_freq_mhz, color='orange', linestyle=':', alpha=0.7,
            label=f'Resonance ({res_freq_mhz:.1f} MHz)')
 ax.set_xlabel('Frequency (MHz)', fontsize=12)
@@ -233,7 +233,7 @@ fig2, ax2 = plt.subplots(figsize=(10, 5))
 ax2.plot(freq_dense / 1e6, vswr_dense, 'b-', linewidth=1.5, label='VSWR')
 ax2.axhline(2.0, color='r', linestyle='--', alpha=0.7, label='VSWR 2:1')
 ax2.axhline(3.0, color='orange', linestyle='--', alpha=0.5, label='VSWR 3:1')
-ax2.axvspan(915, 928, alpha=0.15, color='green', label='AU915 band')
+ax2.axvspan(915, 928, alpha=0.15, color='green', label='AU925 band')
 ax2.set_xlabel('Frequency (MHz)', fontsize=12)
 ax2.set_ylabel('VSWR', fontsize=12)
 ax2.set_title('PIFA 925 MHz - VSWR', fontsize=14)
@@ -245,51 +245,67 @@ fig2.tight_layout()
 fig2.savefig(reportdir / 'vswr_plot.png', dpi=150)
 print(f"  Saved {reportdir / 'vswr_plot.png'}")
 
-# --- Smith Chart ---
-fig3, ax3 = plt.subplots(figsize=(7, 7))
-theta = np.linspace(0, 2 * np.pi, 200)
-ax3.plot(np.cos(theta), np.sin(theta), 'k-', linewidth=0.5)
-for r in [0.2, 0.5, 1.0, 2.0, 5.0]:
-    cx = r / (1 + r)
-    cr = 1 / (1 + r)
-    ax3.add_patch(plt.Circle((cx, 0), cr, fill=False, color='gray',
-                              linewidth=0.3))
-for x in [0.2, 0.5, 1.0, 2.0, 5.0]:
-    arc_theta = np.linspace(0, np.pi / 2, 100)
-    cx, cy = 1, 1 / x
-    r_arc = 1 / x
-    ax3.plot(cx + r_arc * np.cos(np.pi + arc_theta),
-             cy + r_arc * np.sin(np.pi + arc_theta), 'gray', linewidth=0.3)
-    ax3.plot(cx + r_arc * np.cos(np.pi - arc_theta),
-             -cy - r_arc * np.sin(np.pi - arc_theta), 'gray', linewidth=0.3)
+# --- Smith Chart (scikit-rf) ---
+import skrf as rf
 
-# Normalised reflection coefficient
-gamma = s11_dense
-ax3.plot(np.real(gamma), np.imag(gamma), 'b-', linewidth=1.5)
+freq_obj = rf.Frequency.from_f(freqs_flat, unit='Hz')
+s_data = s11_flat.reshape(-1, 1, 1)
+ntwk = rf.Network(frequency=freq_obj, s=s_data, name='PIFA 925 MHz')
 
-# Mark ISM band points
-ism_mask = (freq_dense >= F_BAND_LO) & (freq_dense <= F_BAND_HI)
-ax3.plot(np.real(gamma[ism_mask]), np.imag(gamma[ism_mask]),
-         'r-', linewidth=3, label='AU915 band')
+fig3, ax3 = plt.subplots(figsize=(8, 8))
+ntwk.plot_s_smith(m=0, n=0, ax=ax3, color='b', linewidth=1.5, label='S11')
+
+# Overlay ISM band in red
+ism_idx = (freqs_flat >= F_BAND_LO) & (freqs_flat <= F_BAND_HI)
+gamma_ism = s11_flat[ism_idx]
+ax3.plot(np.real(gamma_ism), np.imag(gamma_ism),
+         'r-', linewidth=3, label='AU925 band', zorder=6)
 
 # Mark 925 MHz
 s11_925_pt = grid.model_S(1, 1, np.array([925e6]))[0]
-ax3.plot(np.real(s11_925_pt), np.imag(s11_925_pt), 'go', markersize=8,
-         label='925 MHz')
+ax3.plot(np.real(s11_925_pt), np.imag(s11_925_pt), 'go', markersize=10,
+         label='925 MHz', zorder=7)
 
-ax3.set_xlim(-1.1, 1.1)
-ax3.set_ylim(-1.1, 1.1)
-ax3.set_aspect('equal')
-ax3.set_title('Smith Chart', fontsize=14)
-ax3.legend()
-ax3.grid(False)
+ax3.set_title('Smith Chart - PIFA 925 MHz', fontsize=14)
+ax3.legend(loc='upper right', fontsize=10)
 fig3.tight_layout()
 fig3.savefig(reportdir / 'smith_chart.png', dpi=150)
 print(f"  Saved {reportdir / 'smith_chart.png'}")
 
+# --- Schematic (schemdraw) ---
+import schemdraw
+import schemdraw.elements as elm
+
+with schemdraw.Drawing(show=False) as d:
+    d.config(fontsize=14)
+    # SMA connector
+    d += (sma := elm.Coax().right().label('J1\nSMA', loc='bottom'))
+    # Series inductor
+    d += elm.Line().right().length(1)
+    d += (l1 := elm.Inductor().right().label('L1', loc='top'))
+    # Node for shunt cap C1
+    d += (node1 := elm.Dot())
+    # Shunt cap C1 to GND
+    d += elm.Line().down().length(0.5).at(node1.end)
+    d += elm.Capacitor().down().label('C1', loc='left')
+    d += elm.Ground()
+    # Continue to shunt cap C2
+    d += elm.Line().right().length(2).at(node1.end)
+    d += (node2 := elm.Dot())
+    # Shunt cap C2 to GND
+    d += elm.Line().down().length(0.5).at(node2.end)
+    d += elm.Capacitor().down().label('C2', loc='left')
+    d += elm.Ground()
+    # Antenna
+    d += elm.Line().right().length(1).at(node2.end)
+    d += elm.Antenna().right().label('AE1\nPIFA', loc='bottom')
+
+    d.save(str(reportdir / 'schematic.png'), dpi=150)
+print(f"  Saved {reportdir / 'schematic.png'}")
+
 # --- Save Touchstone ---
 with open(reportdir / 'verified.s1p', 'w') as f:
-    f.write("! EMerge PIFA Verification - AU915 (915-928 MHz)\n")
+    f.write("! EMerge PIFA Verification - AU925 (915-928 MHz)\n")
     f.write(f"! patch_length={best_pL:.2f}mm, patch_width={best_pW:.2f}mm, "
             f"short_span={best_sW:.2f}mm, feed_offset={best_fo:.2f}mm\n")
     f.write("# MHZ S RI R 50.0\n")

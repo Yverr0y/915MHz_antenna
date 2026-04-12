@@ -11,7 +11,11 @@
       "Bash(kicad-cli sch:*)",
       "Bash(rsvg-convert -w 1200 -f png PIFA_antenna.svg -o schematic.png)",
       "Bash(rsvg-convert -w 1200 -f png pcb_layout.svg -o pcb_layout.png)",
-      "Bash(rsvg-convert -w 1200 -f png pcb_front.svg -o pcb_front.png)"
+      "Bash(rsvg-convert -w 1200 -f png pcb_front.svg -o pcb_front.png)",
+      "Bash(python3:*)",
+      "Bash(pip show:*)",
+      "Bash(/Users/james/miniforge3/bin/python3:*)",
+      "Bash(/Users/james/miniforge3/bin/pip install:*)"
     ]
   }
 }

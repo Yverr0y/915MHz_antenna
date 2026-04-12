@@ -1,6 +1,6 @@
 # 915 MHz Antenna Designs
 
-A collection of PCB antenna designs for the AU915 ISM band (915-928 MHz), simulated in EMerge.
+A collection of PCB antenna designs for the AU925 ISM band (915-928 MHz), simulated in EMerge.
 
 ## PIFA (925 MHz)
 

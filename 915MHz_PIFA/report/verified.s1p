@@ -1,4 +1,4 @@
-! EMerge PIFA Verification - AU915 (915-928 MHz)
+! EMerge PIFA Verification - AU925 (915-928 MHz)
 ! patch_length=34.42mm, patch_width=26.00mm, short_span=12.00mm, feed_offset=7.00mm
 # MHZ S RI R 50.0
 700.000000 -0.97001552 0.22065626
