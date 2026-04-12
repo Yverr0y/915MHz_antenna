@@ -14,7 +14,7 @@ C0 = 299_792_458.0
 
 F_BAND_LO = 915e6
 F_BAND_HI = 928e6
-F_TARGET = 915e6
+F_TARGET = 925e6
 F_CENTER = 0.5 * (F_BAND_LO + F_BAND_HI)
 
 outdir = Path("out")
@@ -181,8 +181,8 @@ if np.any(below_10):
 else:
     bw_lo_mhz = bw_hi_mhz = bw_10 = float('nan')
 
-idx_915 = int(np.argmin(np.abs(freqs_flat - 915e6)))
-s11_at_915 = s11_dB[idx_915]
+idx_925 = int(np.argmin(np.abs(freqs_flat - 925e6)))
+s11_at_925 = s11_dB[idx_925]
 
 # VSWR
 vswr = (1 + np.abs(s11_flat)) / (1 - np.abs(s11_flat))
@@ -193,7 +193,7 @@ status = "PASS" if (in_band and matched) else "FAIL"
 
 print("\nResults:")
 print(f"  Resonance:         {res_freq_mhz:.1f} MHz ({s11_dB[idx_best]:+.2f} dB)")
-print(f"  S11 @ 915 MHz:     {s11_at_915:+.2f} dB")
+print(f"  S11 @ 925 MHz:     {s11_at_925:+.2f} dB")
 print(f"  -10 dB bandwidth:  {bw_lo_mhz:.0f} - {bw_hi_mhz:.0f} MHz ({bw_10:.0f} MHz)")
 print(f"  ISM worst S11:     {ism_worst:+.2f} dB @ {ism_worst_mhz:.0f} MHz")
 print(f"  ISM best S11:      {ism_best:+.2f} dB @ {ism_best_mhz:.0f} MHz")
@@ -219,7 +219,7 @@ ax.axvline(res_freq_mhz, color='orange', linestyle=':', alpha=0.7,
            label=f'Resonance ({res_freq_mhz:.1f} MHz)')
 ax.set_xlabel('Frequency (MHz)', fontsize=12)
 ax.set_ylabel('S11 (dB)', fontsize=12)
-ax.set_title('PIFA 915 MHz - S11 Return Loss', fontsize=14)
+ax.set_title('PIFA 925 MHz - S11 Return Loss', fontsize=14)
 ax.set_xlim(700, 1300)
 ax.set_ylim(-40, 0)
 ax.legend(loc='lower right')
@@ -236,7 +236,7 @@ ax2.axhline(3.0, color='orange', linestyle='--', alpha=0.5, label='VSWR 3:1')
 ax2.axvspan(915, 928, alpha=0.15, color='green', label='AU915 band')
 ax2.set_xlabel('Frequency (MHz)', fontsize=12)
 ax2.set_ylabel('VSWR', fontsize=12)
-ax2.set_title('PIFA 915 MHz - VSWR', fontsize=14)
+ax2.set_title('PIFA 925 MHz - VSWR', fontsize=14)
 ax2.set_xlim(700, 1300)
 ax2.set_ylim(1, 10)
 ax2.legend(loc='upper right')
@@ -272,10 +272,10 @@ ism_mask = (freq_dense >= F_BAND_LO) & (freq_dense <= F_BAND_HI)
 ax3.plot(np.real(gamma[ism_mask]), np.imag(gamma[ism_mask]),
          'r-', linewidth=3, label='AU915 band')
 
-# Mark 915 MHz
-s11_915_pt = grid.model_S(1, 1, np.array([915e6]))[0]
-ax3.plot(np.real(s11_915_pt), np.imag(s11_915_pt), 'go', markersize=8,
-         label='915 MHz')
+# Mark 925 MHz
+s11_925_pt = grid.model_S(1, 1, np.array([925e6]))[0]
+ax3.plot(np.real(s11_925_pt), np.imag(s11_925_pt), 'go', markersize=8,
+         label='925 MHz')
 
 ax3.set_xlim(-1.1, 1.1)
 ax3.set_ylim(-1.1, 1.1)

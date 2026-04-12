@@ -2,9 +2,9 @@
 
 A collection of PCB antenna designs for the AU915 ISM band (915-928 MHz), simulated in EMerge.
 
-## PIFA
+## PIFA (925 MHz)
 
-Shorted-patch PIFA on a 2-layer 1.6 mm FR-4 PCB.
+Shorted-patch PIFA optimised for 925 MHz on a 2-layer 1.6 mm FR-4 PCB.
 
 ![PCB 3D View](915MHz_PIFA/report/pcb_3d.png)
 
@@ -19,17 +19,13 @@ Shorted-patch PIFA on a 2-layer 1.6 mm FR-4 PCB.
 |--------|-------|
 | Resonance | 925.0 MHz (-33.23 dB) |
 | -10 dB BW | 920 - 930 MHz (10 MHz) |
+| S11 at 925 MHz | -33.23 dB |
 | S11 at 915 MHz | -7.09 dB |
-| S11 at 926 MHz | -44.96 dB |
 
 ![S11](915MHz_PIFA/report/s11_plot.png)
 
 ![VSWR](915MHz_PIFA/report/vswr_plot.png)
 
 ![Smith Chart](915MHz_PIFA/report/smith_chart.png)
-
-### Schematic
-
-![Schematic](915MHz_PIFA/report/schematic.png)
 
 See [`915MHz_PIFA/`](915MHz_PIFA/) for the full KiCad project, EMerge simulation scripts, and verification data.
