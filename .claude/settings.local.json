@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /Users/james/EMerge/915MHz_antenna/*.py)",
+      "Bash(python verify.py)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Read(//Applications/KiCad/**)",
+      "Read(//Applications/KiCad/KiCad.app/Contents/MacOS/**)",
+      "Bash(kicad-cli pcb:*)",
+      "Bash(kicad-cli sch:*)",
+      "Bash(rsvg-convert -w 1200 -f png PIFA_antenna.svg -o schematic.png)",
+      "Bash(rsvg-convert -w 1200 -f png pcb_layout.svg -o pcb_layout.png)",
+      "Bash(rsvg-convert -w 1200 -f png pcb_front.svg -o pcb_front.png)"
+    ]
+  }
+}
